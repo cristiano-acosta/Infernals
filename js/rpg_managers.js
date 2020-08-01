@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_managers.js v1.6.1
+// rpg_managers.js v1.5.0
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -882,7 +882,7 @@ ImageManager.loadNormalBitmap = function(path, hue) {
     var key = this._generateCacheKey(path, hue);
     var bitmap = this._imageCache.get(key);
     if (!bitmap) {
-        bitmap = Bitmap.load(decodeURIComponent(path));
+        bitmap = Bitmap.load(path);
         bitmap.addLoadListener(function() {
             bitmap.rotateHue(hue);
         });
@@ -2167,7 +2167,6 @@ BattleManager.initMembers = function() {
     this._escapeRatio = 0;
     this._escaped = false;
     this._rewards = {};
-    this._turnForced = false;
 };
 
 BattleManager.isBattleTest = function() {
@@ -2274,7 +2273,7 @@ BattleManager.updateEvent = function() {
                 return this.updateEventMain();
             }
     }
-    return this.checkAbort();
+    return this.checkAbort2();
 };
 
 BattleManager.updateEventMain = function() {
@@ -2457,13 +2456,6 @@ BattleManager.endTurn = function() {
         this._logWindow.displayAutoAffectedStatus(battler);
         this._logWindow.displayRegeneration(battler);
     }, this);
-    if (this.isForcedTurn()) {
-        this._turnForced = false;
-    }
-};
-
-BattleManager.isForcedTurn = function () {
-    return this._turnForced;
 };
 
 BattleManager.updateTurnEnd = function() {
@@ -2594,7 +2586,6 @@ BattleManager.forceAction = function(battler) {
 
 BattleManager.processForcedAction = function() {
     if (this._actionForcedBattler) {
-        this._turnForced = true;
         this._subject = this._actionForcedBattler;
         this._actionForcedBattler = null;
         this.startAction();
@@ -2622,6 +2613,14 @@ BattleManager.checkBattleEnd = function() {
 };
 
 BattleManager.checkAbort = function() {
+    if ($gameParty.isEmpty() || this.isAborting()) {
+        this.processAbort();
+        return true;
+    }
+    return false;
+};
+
+BattleManager.checkAbort2 = function() {
     if ($gameParty.isEmpty() || this.isAborting()) {
         SoundManager.playEscape();
         this._escaped = true;

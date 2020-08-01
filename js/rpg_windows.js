@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_windows.js v1.6.1
+// rpg_windows.js v1.5.0
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -1894,6 +1894,7 @@ Window_ItemCategory.prototype.makeCommandList = function() {
 
 Window_ItemCategory.prototype.setItemWindow = function(itemWindow) {
     this._itemWindow = itemWindow;
+    this.update();
 };
 
 //-----------------------------------------------------------------------------
@@ -2069,6 +2070,7 @@ Window_SkillType.prototype.update = function() {
 
 Window_SkillType.prototype.setSkillWindow = function(skillWindow) {
     this._skillWindow = skillWindow;
+    this.update();
 };
 
 Window_SkillType.prototype.selectLast = function() {
@@ -2429,6 +2431,7 @@ Window_EquipSlot.prototype.setStatusWindow = function(statusWindow) {
 
 Window_EquipSlot.prototype.setItemWindow = function(itemWindow) {
     this._itemWindow = itemWindow;
+    this.update();
 };
 
 Window_EquipSlot.prototype.updateHelp = function() {
@@ -5898,6 +5901,7 @@ Window_DebugRange.prototype.processCancel = function() {
 
 Window_DebugRange.prototype.setEditWindow = function(editWindow) {
     this._editWindow = editWindow;
+    this.update();
 };
 
 //-----------------------------------------------------------------------------
