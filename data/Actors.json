@@ -1,6 +1,6 @@
 [
 null,
-{"id":1,"battlerName":"Actor2_1","characterIndex":0,"characterName":"$Hero01","classId":1,"equips":[1,1,2,5,0],"faceIndex":0,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Ash","nickname":"Akemi","note":"State Icon Y-Axis : 64","profile":"A veteran warrior who fought on many battlefields.\nHe becomes uncontrollable in battle when berserk."},
+{"id":1,"battlerName":"Actor2_1","characterIndex":0,"characterName":"$Hero01","classId":1,"equips":[1,1,2,5,0],"faceIndex":0,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Arthur","nickname":"Dr Arthur","note":"State Icon Y-Axis : 64","profile":"A veteran warrior who fought on many battlefields.\nHe becomes uncontrollable in battle when berserk."},
 {"id":2,"battlerName":"Actor2_2","characterIndex":0,"characterName":"$Hero02","classId":2,"equips":[2,1,2,5,0],"faceIndex":1,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Silvia","nickname":"Miki","note":"State Icon Y-Axis : 64","profile":"Her father is a master assassin. Throughout her\nyouth, she mastered the techniques of fighting."},
 {"id":3,"battlerName":"Actor2_8","characterIndex":0,"characterName":"$Hero03","classId":3,"equips":[3,0,2,3,0],"faceIndex":7,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Miria","nickname":"Tomoe","note":"State Icon Y-Axis : 64","profile":"A woman whose destiny was to become a saint. She\nis full of passion and gives equal love to the enemy."}
 ]
